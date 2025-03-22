@@ -1,0 +1,10 @@
+.gameScore {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.scoreContainer {
+  border: 1px solid black;
+  padding: 1em;
+}
