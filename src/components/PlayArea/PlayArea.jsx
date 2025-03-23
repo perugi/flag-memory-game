@@ -1,25 +1,19 @@
 import styles from "./PlayArea.module.css";
-
 import CountryCard from "./CountryCard/CountryCard";
 
-export default function PlayArea() {
-  const countriesInPlay = new Set([
-    "US",
-    "CA",
-    "JP",
-    "BR",
-    "AU",
-    "GB",
-    "DE",
-    "FR",
-    "IT",
-    "CN",
-  ]);
-  // TODO Do no use index as key
+export default function PlayArea({ countriesInPlay }) {
+  function shuffleCountries(countries) {
+    const shuffled = [...countries].sort(() => Math.random() - 0.5);
+
+    return shuffled;
+  }
+
+  const displayedCountries = shuffleCountries(countriesInPlay);
+
   return (
     <section className={styles.playArea}>
-      {Array.from(countriesInPlay).map((countryCode, index) => (
-        <CountryCard key={index} countryCode={countryCode} />
+      {Array.from(displayedCountries).map((countryCode) => (
+        <CountryCard key={countryCode} countryCode={countryCode} />
       ))}
     </section>
   );

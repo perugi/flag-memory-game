@@ -9,6 +9,7 @@ function App() {
   const roundNumber = 1;
   const currentScore = 3;
   const highScore = 5;
+  const countriesInPlay = ["US", "CA", "ME", "BR", "AR"];
 
   return (
     <div className={styles.app}>
@@ -19,7 +20,7 @@ function App() {
           currentScore={currentScore}
           roundNumber={roundNumber}
         />
-        <PlayArea />
+        <PlayArea countriesInPlay={countriesInPlay} />
       </main>
       <Footer className={styles.footer} />
     </div>
