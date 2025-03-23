@@ -4,7 +4,13 @@
   justify-content: center;
 }
 
-.scoreContainer {
+.scoreContainer,
+.roundContainer {
   border: 1px solid black;
   padding: 1em;
+}
+
+.roundContainer {
+  border-width: 2px;
+  font-weight: 600;
 }

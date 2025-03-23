@@ -6,14 +6,19 @@ import PlayArea from "./components/PlayArea/PlayArea";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const highScore = 5;
+  const roundNumber = 1;
   const currentScore = 3;
+  const highScore = 5;
 
   return (
     <div className={styles.app}>
       <Header />
       <main className={styles.main}>
-        <GameScore highScore={highScore} currentScore={currentScore} />
+        <GameScore
+          highScore={highScore}
+          currentScore={currentScore}
+          roundNumber={roundNumber}
+        />
         <PlayArea />
       </main>
       <Footer className={styles.footer} />
