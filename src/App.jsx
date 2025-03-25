@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styles from "./App.module.css";
 import Header from "./components/Header/Header";
@@ -27,6 +27,13 @@ function App() {
   ]);
   const [clickedCountries, setClickedCountries] = useState([]);
 
+  useEffect(() => {
+    const storedHighScore = localStorage.getItem("highScore");
+    if (storedHighScore) {
+      setHighScore(parseInt(storedHighScore, 10));
+    }
+  }, []);
+
   function goToNextRound() {
     setRoundNumber((prev) => prev + 1);
     const numberOfCountries = Math.min(
@@ -49,6 +56,13 @@ function App() {
     setGameScore(0);
   }
 
+  function updateHighScore(currentScore) {
+    if (currentScore > highScore) {
+      setHighScore(currentScore);
+      localStorage.setItem("highScore", currentScore);
+    }
+  }
+
   function handleCountryClick(countryCode) {
     if (clickedCountries.includes(countryCode)) {
       setGameIsOver(true);
@@ -60,9 +74,7 @@ function App() {
       prev.filter((country) => country.iso !== countryCode)
     );
     setGameScore((prev) => prev + 1);
-    if (gameScore + 1 > highScore) {
-      setHighScore(gameScore + 1);
-    }
+    updateHighScore(gameScore + 1);
 
     if (clickedCountries.length + 1 === countriesInPlay.length) {
       goToNextRound();
