@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import GameScore from "./components/GameScore/GameScore";
 import PlayArea from "./components/PlayArea/PlayArea";
 import Footer from "./components/Footer/Footer";
+import GameOverModal from "./components/GameOverModal/GameOverModal";
 import countryData from "./data/countries.json";
 
 const MIN_COUNTRIES = 4;
@@ -16,6 +17,7 @@ function getRandomCountries(countryList, num) {
 }
 
 function App() {
+  const [gameIsOver, setGameIsOver] = useState(false);
   const [roundNumber, setRoundNumber] = useState(1);
   const [gameScore, setGameScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
@@ -37,6 +39,7 @@ function App() {
   }
 
   function resetGame() {
+    setGameIsOver(false);
     setRoundNumber(1);
     setCountries(countryData.countries);
     setCountriesInPlay([
@@ -48,7 +51,7 @@ function App() {
 
   function handleCountryClick(countryCode) {
     if (clickedCountries.includes(countryCode)) {
-      resetGame();
+      setGameIsOver(true);
       return;
     }
 
@@ -78,9 +81,17 @@ function App() {
         <PlayArea
           countriesInPlay={countriesInPlay}
           handleCountryClick={handleCountryClick}
+          gameScore={gameScore}
+          gameIsOver={gameIsOver}
         />
       </main>
       <Footer className={styles.footer} />
+      <GameOverModal
+        gameIsOver={gameIsOver}
+        gameScore={gameScore}
+        highScore={highScore}
+        resetGame={resetGame}
+      />
     </div>
   );
 }
