@@ -15,14 +15,17 @@ export default function GameOverModal({
       // Add a small delay to prevent the click that opened the modal from closing it
       setTimeout(() => {
         window.addEventListener("click", resetGame);
+        window.addEventListener("keydown", resetGame);
       }, 0);
     } else {
       dialogRef.current.close();
       window.removeEventListener("click", resetGame);
+      window.removeEventListener("keydown", resetGame);
     }
 
     return () => {
       window.removeEventListener("click", resetGame);
+      window.removeEventListener("keydown", resetGame);
     };
   }, [gameIsOver, resetGame]);
 
