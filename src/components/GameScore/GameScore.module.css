@@ -8,6 +8,10 @@
 
 .scoreContainer,
 .roundContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
   border: 1px solid black;
   padding: 1em;
   background-color: whitesmoke;
@@ -17,4 +21,12 @@
 .roundContainer {
   border-width: 2px;
   font-weight: 600;
+}
+
+@media (min-width: 649px) {
+  .gameScore {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
