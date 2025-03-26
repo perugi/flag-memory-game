@@ -63,6 +63,12 @@ function App() {
     }
   }
 
+  function shuffleCountries(countries) {
+    const shuffled = [...countries].sort(() => Math.random() - 0.5);
+
+    return shuffled;
+  }
+
   function handleCountryClick(countryCode) {
     if (clickedCountries.includes(countryCode)) {
       setGameIsOver(true);
@@ -74,6 +80,7 @@ function App() {
       prev.filter((country) => country.iso !== countryCode)
     );
     setGameScore((prev) => prev + 1);
+    setCountriesInPlay((prev) => shuffleCountries(prev));
     updateHighScore(gameScore + 1);
 
     if (clickedCountries.length + 1 === countriesInPlay.length) {
