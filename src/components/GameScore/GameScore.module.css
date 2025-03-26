@@ -1,13 +1,17 @@
 .gameScore {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .scoreContainer,
 .roundContainer {
   border: 1px solid black;
   padding: 1em;
+  background-color: whitesmoke;
+  border-radius: 4px;
 }
 
 .roundContainer {

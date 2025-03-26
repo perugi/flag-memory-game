@@ -31,10 +31,12 @@ export default function GameOverModal({
 
   return (
     <dialog ref={dialogRef} className={styles.gameOverModal}>
-      <h2>Game Over!</h2>
-      <p>Final score: {gameScore}</p>
-      <p>High score: {highScore}</p>
-      <p>Click anywhere to play again</p>
+      <div className={styles.modalContainer}>
+        <h2>Game Over!</h2>
+        <p>Final score: {gameScore}</p>
+        <p>High score: {highScore}</p>
+        <p>Click anywhere to play again...</p>
+      </div>
     </dialog>
   );
 }

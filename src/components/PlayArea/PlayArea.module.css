@@ -1,7 +1,8 @@
 .playArea {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   justify-content: center;
   padding: 1rem 0;
+  max-width: 1400px;
 }
-
