@@ -21,6 +21,10 @@ footer {
   text-align: end;
 }
 
+.ghLink > div:last-child {
+  width: 150px;
+}
+
 .ghLogo {
   width: 35px;
   height: 35px;

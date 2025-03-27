@@ -1,0 +1,60 @@
+.backgroundContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0.2;
+}
+
+.scrollingMap {
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  height: 90vh;
+  width: auto;
+  object-fit: contain;
+  max-width: none;
+  animation: scrollMap 270s linear infinite;
+}
+
+.map1 {
+  animation-delay: 0s;
+}
+
+.map2 {
+  animation-delay: -90s;
+}
+
+.map3 {
+  animation-delay: -180s;
+}
+
+@keyframes scrollMap {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+/* This is to cover edge cases of narrow viewport height vs. width */
+@media (min-aspect-ratio: 2/1) {
+  .scrollingMap {
+    height: auto;
+    width: 100vw;
+    top: 50%;
+  }
+
+  @keyframes scrollMap {
+    0% {
+      transform: translate(-150%, -50%);
+    }
+    100% {
+      transform: translate(150%, -50%);
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import styles from "./App.module.css";
+import Background from "./components/Background/Background";
 import Header from "./components/Header/Header";
 import GameScore from "./components/GameScore/GameScore";
 import PlayArea from "./components/PlayArea/PlayArea";
@@ -90,6 +91,7 @@ function App() {
 
   return (
     <div className={styles.app}>
+      <Background />
       <Header />
       <main className={styles.main}>
         <GameScore
