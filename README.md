@@ -1,12 +1,19 @@
-# React + Vite
+# flag-memory-game
+A memory game, built with React, where the user must click each country flag just once.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+💻 [Live Demo](https://flag-memory-game.pages.dev/) 💻
 
-Currently, two official plugins are available:
+![screenshot](https://github.com/user-attachments/assets/6151d695-5dca-4671-b6a1-6a39d1b14e6b)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💡 Features
+- Randomized selection of countries each round (increasing in number of countries to increase difficulty).
+- Randomized order of countries each turn.
+- High-score, stored in users browser using local storage.
+- Country flags downloaded from https://flagcdn.com/
+- Accessible using keyboard controls only.
+- An animated world map background for that little extra pizzazz
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies, Tools, Design Approaches
+- Vite + React
+- CSS Modules
+- Usage of React useEffect for calling browser APIs (local storage, window and dialog)
