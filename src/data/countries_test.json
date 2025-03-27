@@ -1,0 +1,68 @@
+{
+  "countries": [
+    {
+      "name": "Afghanistan",
+      "iso": "AF"
+    },
+    {
+      "name": "Åland Islands",
+      "iso": "AX"
+    },
+    {
+      "name": "Albania",
+      "iso": "AL"
+    },
+    {
+      "name": "Algeria",
+      "iso": "DZ"
+    },
+    {
+      "name": "American Samoa",
+      "iso": "AS"
+    },
+    {
+      "name": "Andorra",
+      "iso": "AD"
+    },
+    {
+      "name": "Angola",
+      "iso": "AO"
+    },
+    {
+      "name": "Anguilla",
+      "iso": "AI"
+    },
+    {
+      "name": "Antarctica",
+      "iso": "AQ"
+    },
+    {
+      "name": "Antigua and Barbuda",
+      "iso": "AG"
+    },
+    {
+      "name": "Argentina",
+      "iso": "AR"
+    },
+    {
+      "name": "Armenia",
+      "iso": "AM"
+    },
+    {
+      "name": "Aruba",
+      "iso": "AW"
+    },
+    {
+      "name": "Australia",
+      "iso": "AU"
+    },
+    {
+      "name": "Austria",
+      "iso": "AT"
+    },
+    {
+      "name": "Azerbaijan",
+      "iso": "AZ"
+    }
+  ]
+}

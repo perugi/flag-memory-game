@@ -77,9 +77,15 @@ function App() {
     }
 
     setClickedCountries((prev) => [...prev, countryCode]);
-    setCountries((prev) =>
-      prev.filter((country) => country.iso !== countryCode)
-    );
+
+    if (countries.length <= MAX_COUNTRIES + 1) {
+      setCountries(countryData.countries);
+    } else {
+      setCountries((prev) =>
+        prev.filter((country) => country.iso !== countryCode)
+      );
+    }
+
     setGameScore((prev) => prev + 1);
     setCountriesInPlay((prev) => shuffleCountries(prev));
     updateHighScore(gameScore + 1);
